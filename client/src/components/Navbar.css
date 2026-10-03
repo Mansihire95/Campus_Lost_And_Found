@@ -1,0 +1,209 @@
+/* ─── Navbar shell ─────────────────────────────────────────────────── */
+.navbar {
+  background: var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  gap: 1rem;
+}
+
+/* ─── Brand ────────────────────────────────────────────────────────── */
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+}
+
+.brand-compass {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 0.08em;
+}
+
+.brand-sub {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* ─── Center links ─────────────────────────────────────────────────── */
+.navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.nav-link {
+  padding: 0.4rem 0.75rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.875rem;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+/* ─── Right auth section ───────────────────────────────────────────── */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.nav-username {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ─── Logout button ────────────────────────────────────────────────── */
+.btn-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.42rem 1rem;
+  background: rgba(231, 76, 60, 0.85);
+  color: white;
+  border: 1.5px solid rgba(231, 76, 60, 0.4);
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s, transform 0.15s;
+  font-family: var(--font);
+}
+
+.btn-logout:hover {
+  background: #c0392b;
+  transform: translateY(-1px);
+}
+
+/* ─── Hamburger ────────────────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.25s;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── Mobile dropdown ──────────────────────────────────────────────── */
+.mobile-menu {
+  background: var(--primary-dark);
+  padding: 0.75rem 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-link {
+  padding: 0.6rem 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 7px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.mobile-link:hover,
+.mobile-link.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+.mobile-link-accent {
+  color: #ffd166;
+  font-weight: 600;
+}
+
+.mobile-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 0.4rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+}
+
+.mobile-logout {
+  margin-top: 0.25rem;
+  padding: 0.65rem 1rem;
+  background: rgba(231, 76, 60, 0.9);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: var(--font);
+  transition: background 0.15s;
+}
+
+.mobile-logout:hover { background: #c0392b; }
+
+/* ─── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .navbar-center { display: none; }
+  .navbar-right  { display: none; }
+  .hamburger     { display: flex; }
+}
+
+@media (max-width: 480px) {
+  .brand-compass { font-size: 1.1rem; }
+}

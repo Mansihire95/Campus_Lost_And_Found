@@ -1,0 +1,64 @@
+/* ItemCard styles — injected via index.css globals */
+.item-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.item-card-img {
+  position: relative;
+  height: 180px;
+  background: #f0f2f5;
+  overflow: hidden;
+}
+
+.item-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-type-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.item-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.item-meta span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
