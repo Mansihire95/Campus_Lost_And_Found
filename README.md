@@ -273,6 +273,4 @@ CAMPUS_LOST_N_FOUND/
 
 ---
 
-## License
 
-MIT License — KJO University COMPASS Platform © 2026
